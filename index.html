@@ -1,39 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/styleMain.css">
     <script src="./assets/js/mainCRUD.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>Proyecto CRUD</title>
 </head>
+
 <body>
-    
+
     <body>
-        <h1>Proyecto CRUD</h1>
-        <h2>Crear Actividad</h2>
 
-        <form>
-            <label for="actividad">Actividad:</label>
-            <input type="text" id="actividad" name="actividad"><br><br>
-            
-            <label for="lugar">Lugar:</label>
-            <input type="text" id="lugar" name="lugar"><br><br>
+        <header>
+            <nav></nav>
+        </header>
 
-            <label for="diaInicio">Día de inicio:</label>
-            <input type="date" id="diaInicio" name="diaInicio"><br><br>
-    
-            <label for="fechaTermino">Fecha de término:</label>
-            <input type="date" id="fechaTermino" name="fechaTermino"><br><br>
-    
-            <label for="horaInicio">Hora de inicio:</label>
-            <input type="time" id="horaInicio" name="horaInicio"><br><br>
-    
-            <label for="horaTermino">Hora de término:</label>
-            <input type="time" id="horaTermino" name="horaTermino"><br><br>
-    
-            <input type="submit" value="Enviar">
-        </form>
-</body>
+        <div class="titles">
+            <h1>Proyecto CRUD</h1>
+
+        </div>
+        <main class="main-content show" id="listActivites">
+            <div class="activities-container">
+                <h2>Lista de Actividades</h2>
+                <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">+</button>
+            </div>
+            <table class="main-table-results" id="tablaActividades">
+                <tr>
+                    <th>Actividad</th>
+                    <th>Lugar</th>
+                    <th>Fecha de inicio</th>
+                    <th>Fecha de término</th>
+                    <th>Hora de inicio</th>
+                    <th>Hora de término</th>
+                    <th>Acciones</th>
+                </tr>
+                <tr>
+                    <td>Actividad 1</td>
+                    <td>Lugar 1</td>
+                    <td>2021-10-10</td>
+                    <td>2021-10-10</td>
+                    <td>10:00</td>
+                    <td>11:00</td>
+                    <td>
+                        <button class="btn btn-primary">Editar</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <div class="popup-Form" id="form">
+
+            <div class="activities-container">
+                <h2>Crear Actividad</h2>
+                <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">x</button>
+            </div>
+            <form>
+                <label for="actividad">Actividad:</label>
+                <input type="text" id="actividad" name="actividad"><br><br>
+
+                <label for="lugar">Lugar:</label>
+                <input type="text" id="lugar" name="lugar"><br><br>
+
+                <label for="diaInicio">Fecha de inicio:</label>
+                <input type="date" id="diaInicio" name="diaInicio"><br><br>
+
+                <label for="fechaTermino">Fecha de término:</label>
+                <input type="date" id="fechaTermino" name="fechaTermino"><br><br>
+
+                <label for="horaInicio">Hora de inicio:</label>
+                <input type="time" id="horaInicio" name="horaInicio"><br><br>
+
+                <label for="horaTermino">Hora de término:</label>
+                <input type="time" id="horaTermino" name="horaTermino"><br><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+
+
+    </body>
+
 </html>
