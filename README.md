@@ -1,1 +1,5 @@
 # PROY2-CRUD
+# Descripción de mi proyecto
+La página web permitirá al usuario ver una lista de actividades con lugar, fecha y hora. El usuario podrá agregar nuevas actividades a la lista, y también podrá eliminar o modificar las actividades existentes. La funcionalidad de la página se implementará utilizando JavaScript, con eventos y funciones para manejar las diferentes operaciones de CRUD en la lista de actividades. La página se diseñará con una estética moderna y atractiva, utilizando CSS para hacer que la interfaz de usuario sea fácil de leer y utilizar. En resumen, el objetivo de este proyecto es crear una página web que muestre las actividades con lugar, fecha y hora, con la posibilidad de agregar, eliminar y modificar dichas actividades utilizando técnicas modernas de programación web con HTML5, CSS y JavaScript.
+# URL
+Link de la página [URL](https://edarvichm.github.io/PROY2-CRUD/)
