@@ -5,7 +5,7 @@ function createPopup() {
     if (listActivites.classList.contains("show")) {
         // Agrega clase para mostrar el popup
         form.classList.add("show");
-
+        
         // Quita clase para ocultar la lista de actividades
         listActivites.classList.remove("show");
     } else {

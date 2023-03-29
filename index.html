@@ -26,65 +26,66 @@
             <h1>Proyecto CRUD</h1>
 
         </div>
-        <main class="main-content show" id="listActivites">
-            <div class="activities-container">
-                <h2>Lista de Actividades</h2>
-                <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">+</button>
-            </div>
-            <table class="main-table-results" id="tablaActividades">
-                <tr>
-                    <th>Actividad</th>
-                    <th>Lugar</th>
-                    <th>Fecha de inicio</th>
-                    <th>Fecha de término</th>
-                    <th>Hora de inicio</th>
-                    <th>Hora de término</th>
-                    <th>Acciones</th>
-                </tr>
-                <tr>
-                    <td>Actividad 1</td>
-                    <td>Lugar 1</td>
-                    <td>2021-10-10</td>
-                    <td>2021-10-10</td>
-                    <td>10:00</td>
-                    <td>11:00</td>
-                    <td>
-                        <button class="btn btn-primary">Editar</button>
-                        <button class="btn btn-danger">Eliminar</button>
-                    </td>
-                </tr>
-            </table>
+
+        <main class="main-content">
+            <section class="listActivites show" id="listActivites">
+                <div class="activities-container">
+                    <h2>Lista de Actividades</h2>
+                    <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">+</button>
+                </div>
+                <table class="main-table-results" id="tablaActividades">
+                    <tr>
+                        <th>Actividad</th>
+                        <th>Lugar</th>
+                        <th>Fecha de inicio</th>
+                        <th>Fecha de término</th>
+                        <th>Hora de inicio</th>
+                        <th>Hora de término</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <tr>
+                        <td>Actividad 1</td>
+                        <td>Lugar 1</td>
+                        <td>2021-10-10</td>
+                        <td>2021-10-10</td>
+                        <td>10:00</td>
+                        <td>11:00</td>
+                        <td>
+                            <button class="btn btn-primary">Editar</button>
+                            <button class="btn btn-danger">Eliminar</button>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="popup-Form" id="form">
+                <div class="activities-container">
+                    <h2>Crear Actividad</h2>
+                    <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">x</button>
+                </div>
+                <form>
+                    <label for="actividad">Actividad:</label>
+                    <input type="text" id="actividad" name="actividad"><br><br>
+
+                    <label for="lugar">Lugar:</label>
+                    <input type="text" id="lugar" name="lugar"><br><br>
+
+                    <label for="diaInicio">Fecha de inicio:</label>
+                    <input type="date" id="diaInicio" name="diaInicio"><br><br>
+
+                    <label for="fechaTermino">Fecha de término:</label>
+                    <input type="date" id="fechaTermino" name="fechaTermino"><br><br>
+
+                    <label for="horaInicio">Hora de inicio:</label>
+                    <input type="time" id="horaInicio" name="horaInicio"><br><br>
+
+                    <label for="horaTermino">Hora de término:</label>
+                    <input type="time" id="horaTermino" name="horaTermino"><br><br>
+
+                    <input type="submit" value="Enviar">
+                </form>
+            </section>
         </main>
-        <div class="popup-Form" id="form">
-
-            <div class="activities-container">
-                <h2>Crear Actividad</h2>
-                <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">x</button>
-            </div>
-            <form>
-                <label for="actividad">Actividad:</label>
-                <input type="text" id="actividad" name="actividad"><br><br>
-
-                <label for="lugar">Lugar:</label>
-                <input type="text" id="lugar" name="lugar"><br><br>
-
-                <label for="diaInicio">Fecha de inicio:</label>
-                <input type="date" id="diaInicio" name="diaInicio"><br><br>
-
-                <label for="fechaTermino">Fecha de término:</label>
-                <input type="date" id="fechaTermino" name="fechaTermino"><br><br>
-
-                <label for="horaInicio">Hora de inicio:</label>
-                <input type="time" id="horaInicio" name="horaInicio"><br><br>
-
-                <label for="horaTermino">Hora de término:</label>
-                <input type="time" id="horaTermino" name="horaTermino"><br><br>
-
-                <input type="submit" value="Enviar">
-            </form>
-        </div>
-
-
 
     </body>
 
