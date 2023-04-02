@@ -9,23 +9,6 @@ const btnCrearActividad = document.getElementById("btnCrearActividad")
 btnCrearActividad.addEventListener("click", limpiarFormulario)
 const actividades = []
 
-// Create getelemetbyid for the imput on form from index.html
-// const actividad = document.getElementById('actividad')
-// const lugar = document.getElementById('lugar')
-// const fechaInicio = document.getElementById('fechaInicio')
-// const fechaTermino = document.getElementById('fechaTermino')
-// const horaInicio = document.getElementById('horaInicio')
-// const horaTermino = document.getElementById('horaTermino')
-
-// // Create event listener for the button on form from index.html
-// actividad.addEventListener('input', handleInput)
-// lugar.addEventListener('input', handleInput)
-// fechaInicio.addEventListener('input', handleInput)
-// fechaTermino.addEventListener('input', handleInput)
-// horaInicio.addEventListener('input', handleInput)
-// horaTermino.addEventListener('input', handleInput)
-
-// Create function to handle the input on form from index.html
 function handleInput(e) {
   const button = document.getElementById("sendForm")
   if (
@@ -40,20 +23,13 @@ function handleInput(e) {
   } else {
     button.setAttribute("disabled", true)
   }
-  // const { name, value } = e.target
-  // evento = {
-  //     ...evento,
-  //     [name]: value
-  // }
-  console.log(e)
 }
 
 function create(e) {
   e.preventDefault()
   const nuevoEvento = readForm()//crearObjeto()
-  console.log(nuevoEvento)
   createRow(nuevoEvento)//ingresarDatosTabla()
-  saveDataLS()
+  saveDataLS()//guarda datos en Local Storage
 }
 
 function limpiarFormulario() {
@@ -71,10 +47,7 @@ function readForm() {
     "horaInicio",
     "horaTermino",
   ]
-  dataForm.forEach((id) => {
-    const element = document.getElementById(id)
-    console.log(element)
-  })
+  dataForm.forEach((id) => {const element = document.getElementById(id)})
   //Creo un Objeto con los valores de Formulario como retorno de la función
   const nuevoEvento = {
     nombreActividad: nombreActividad.value,
@@ -107,21 +80,18 @@ function createRow(nuevoEvento) {
 }
 
 function saveDataLS() {
-  console.log('JSON.stringify' + JSON.stringify(actividades))
   localStorage.setItem('actividades', JSON.stringify(actividades))
 }
 
 function readFromLS() {
     const actividadesLS = JSON.parse(localStorage.getItem('actividades'))
-    const actividadesLSArray = Object.values(actividadesLS)
-    console.log(actividadesLSArray)
+    const actividadesLSArray = Object.values(actividadesLS) //convierte el objeto en array
 
     //si hay actividades en el local storage
     if(actividadesLSArray){
         //recorre el local storage
         actividadesLSArray.forEach(actividad => {
             //crea una fila por cada actividad
-            console.log('Actividad LS: '+actividad)
             createRow(actividad)
         })
     }
