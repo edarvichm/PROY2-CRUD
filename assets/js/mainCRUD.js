@@ -16,3 +16,5 @@ function createPopup() {
         listActivites.classList.add("show");
     }
 }
+
+

@@ -55,78 +55,6 @@
                             <button class="btn btn-danger">Eliminar</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>Lorem ipsum dolor sit amet.</td>
-                        <td>2021-10-10</td>
-                        <td>2021-10-10</td>
-                        <td>10:00</td>
-                        <td>11:00</td>
-                        <td>
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>Lorem ipsum dolor sit amet.</td>
-                        <td>2021-10-10</td>
-                        <td>2021-10-10</td>
-                        <td>10:00</td>
-                        <td>11:00</td>
-                        <td>
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing.</td>
-                        <td>Lorem ipsum dolor sit amet.</td>
-                        <td>2021-10-10</td>
-                        <td>2021-10-10</td>
-                        <td>10:00</td>
-                        <td>11:00</td>
-                        <td>
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, eius.</td>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
-                        <td>2021-10-10</td>
-                        <td>2021-10-10</td>
-                        <td>10:00</td>
-                        <td>11:00</td>
-                        <td>
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet.</td>
-                        <td>Lorem, ipsum dolor.</td>
-                        <td>2021-10-10</td>
-                        <td>2021-10-10</td>
-                        <td>10:00</td>
-                        <td>11:00</td>
-                        <td>
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Actividad</td>
-                        <td>Lugar</td>
-                        <td>2021-10-10</td>
-                        <td>2021-10-10</td>
-                        <td>10:00</td>
-                        <td>11:00</td>
-                        <td>
-                            <button class="btn btn-primary">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </td>
-                    </tr>
                 </table>
             </section>
 
@@ -135,15 +63,15 @@
                     <h2>Crear Actividad</h2>
                     <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">x</button>
                 </div>
-                <form>
-                    <label for="actividad">Actividad:</label>
-                    <input type="text" id="actividad" name="actividad"><br><br>
+                <form id="form">
+                    <label for="nombreActividad">Nombre Actividad:</label>
+                    <input type="text" id="nombreActividad" name="nombreActividad"><br><br>
 
                     <label for="lugar">Lugar:</label>
                     <input type="text" id="lugar" name="lugar"><br><br>
 
-                    <label for="diaInicio">Fecha de inicio:</label>
-                    <input type="date" id="diaInicio" name="diaInicio"><br><br>
+                    <label for="fechaInicio">Fecha de inicio:</label>
+                    <input type="date" id="fechaInicio" name="fechaInicio"><br><br>
 
                     <label for="fechaTermino">Fecha de término:</label>
                     <input type="date" id="fechaTermino" name="fechaTermino"><br><br>
@@ -154,11 +82,11 @@
                     <label for="horaTermino">Hora de término:</label>
                     <input type="time" id="horaTermino" name="horaTermino"><br><br>
 
-                    <input type="submit" value="Enviar">
+                    <input type="submit" disabled value="Enviar" id="sendForm">
                 </form>
             </section>
         </main>
-
+        <script src="./assets/js/mainForm.js"></script>
     </body>
 
 </html>
