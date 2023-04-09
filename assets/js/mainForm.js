@@ -5,8 +5,8 @@ sendForm.addEventListener("click", createPopup)
 const form = document.getElementById("form")
 form.addEventListener("input", handleInput)
 
-const btnCrearActividad = document.getElementById("btnCrearActividad")
-btnCrearActividad.addEventListener("click", limpiarFormulario)
+// const btnCrearActividad = document.getElementById("btnCrearActividad")
+// btnCrearActividad.addEventListener("click", limpiarFormulario)
 const actividades = []
 
 let index = 1
@@ -23,10 +23,10 @@ function handleInput(e) {
     horaTermino.value
   ) {
     button.removeAttribute("disabled")
-    update.removeAttribute("disabled")
+  // update.removeAttribute("disabled")
   } else {
     button.setAttribute("disabled", true)
-    update.setAttribute("disabled", true)
+    // update.setAttribute("disabled", true)
   }
   //console.log(nombreActividad.value+lugar.value+fechaInicio.value+fechaTermino.value+horaInicio.value+horaTermino.value)
 }
@@ -35,17 +35,21 @@ function create(e) {
   e.preventDefault()
   const nuevoEvento = readForm()//crearObjeto()
   createRow(nuevoEvento)//ingresarDatosTabla()
+  // limpiarFormulario() //limpia el formulario
   saveDataLS()//guarda datos en Local Storage
 }
 
 function limpiarFormulario() {
   const form = document.getElementById("form")
-  form.reset()
+  if(form.elements.length > 0) {
+    form.reset();
+  }
 }
 
 function readForm() {
   //Obtengo los datos del formulario y los agrego al EventListener
   const dataForm = [
+    "index",
     "nombreActividad",
     "lugar",
     "fechaInicio",
@@ -79,7 +83,7 @@ function createRow(nuevoEvento) {
                                     <td id=horaTermino${index}>${nuevoEvento.horaTermino}</td>
                                     <td>
                                         <button class="btn btn-primary" id=e${index} onclick="editPopup(${index})">Editar</button>
-                                        <button class="btn btn-danger" id=d${index} onclick="deletePopup(${index})">Eliminar</button>
+                                        <button class="btn btn-primary" id=d${index} onclick="deleteEvent(${index})">Eliminar</button>
                                     </td>
                                 </tr>`
   //Agrego el objeto al array de actividades
