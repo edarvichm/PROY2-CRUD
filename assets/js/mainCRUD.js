@@ -1,6 +1,6 @@
 function createPopup() {
     const listActivites = document.getElementById("listActivites");
-    const form = document.getElementById("form");
+    const form = document.getElementById("form"); //cambiar nombre de constante
 
     if (listActivites.classList.contains("show")) {
         // Agrega clase para mostrar el popup
@@ -18,6 +18,7 @@ function createPopup() {
         form.classList.remove("show");
         // Agrega clase para mostrar la lista de actividades
         listActivites.classList.add("show");
+        limpiarFormulario()
     }
 
 

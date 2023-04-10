@@ -1,6 +1,7 @@
 const sendFormUpdate = document.getElementById("sendFormUpdate");
 
 function editPopup(index) {
+  flagEdit = true
   createPopup();
   const elA = "nombreActividad" + index;
   const elB = "lugar" + index;
@@ -15,8 +16,7 @@ function editPopup(index) {
   const horaInicio = document.getElementById(elE);
   const horaTermino = document.getElementById(elF);
 
-  document.getElementById("nombreActividad").value =
-    nombreActividad.textContent;
+  document.getElementById("nombreActividad").value = nombreActividad.textContent;
   document.getElementById("lugar").value = lugar.textContent;
   document.getElementById("fechaInicio").value = fechaInicio.textContent;
   document.getElementById("fechaTermino").value = fechaTermino.textContent;
@@ -25,9 +25,13 @@ function editPopup(index) {
 
   const btnEdit = document.getElementById("sendFormUpdate");
   if (!btnEdit) {
-    const formU = document.getElementById("form");
+    const formU = document.getElementById("formulario");
     const btnUpdate = document.createElement("input");
     btnUpdate.setAttribute("type", "submit");
+    const button = document.getElementById("sendForm")
+    if(flagEdit){
+      button.setAttribute("disabled", true)
+    }
     // btnUpdate.setAttribute("disabled", "false")
     btnUpdate.setAttribute("onclick", `updateEvent(${index})`);
     btnUpdate.value = "Actualizar";

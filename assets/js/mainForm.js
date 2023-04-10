@@ -2,11 +2,12 @@
 const sendForm = document.getElementById("sendForm")
 sendForm.addEventListener("click", create)
 sendForm.addEventListener("click", createPopup)
-const form = document.getElementById("form")
+const form = document.getElementById("formulario")
 form.addEventListener("input", handleInput)
+let flagEdit = false
 
-// const btnCrearActividad = document.getElementById("btnCrearActividad")
-// btnCrearActividad.addEventListener("click", limpiarFormulario)
+const btnCrearActividad = document.getElementById("btnCrearActividad")
+btnCrearActividad.addEventListener("click", limpiarFormulario)
 const actividades = []
 
 let index = 1
@@ -14,13 +15,16 @@ let index = 1
 function handleInput(e) {
   const button = document.getElementById("sendForm")
   const update = document.getElementById('sendFormUpdate')
+  // flagEdit ? button.setAttribute("disabled", true) : button.removeAttribute("disabled")
+
   if (
     nombreActividad.value &&
     lugar.value &&
     fechaInicio.value &&
     fechaTermino.value &&
     horaInicio.value &&
-    horaTermino.value
+    horaTermino.value &&
+    !flagEdit
   ) {
     button.removeAttribute("disabled")
   // update.removeAttribute("disabled")
@@ -33,16 +37,18 @@ function handleInput(e) {
 
 function create(e) {
   e.preventDefault()
+  flagEdit = false
   const nuevoEvento = readForm()//crearObjeto()
   createRow(nuevoEvento)//ingresarDatosTabla()
-  // limpiarFormulario() //limpia el formulario
+  limpiarFormulario() //limpia el formulario
   saveDataLS()//guarda datos en Local Storage
 }
 
 function limpiarFormulario() {
-  const form = document.getElementById("form")
-  if(form.elements.length > 0) {
-    form.reset();
+  const formClean = document.getElementById("formulario")
+  console.log(formClean)
+  if(formClean) {
+    formClean.reset();
   }
 }
 
