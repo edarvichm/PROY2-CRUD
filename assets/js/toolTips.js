@@ -15,7 +15,7 @@ for (let i = 0; i < tds.length; i++) {
     const touchX = e.changedTouches[0].clientX;
     const touchY = e.changedTouches[0].clientY;
     tooltip.style.top = touchY + "px";
-    tooltip.style.left = (touchX+10) + "px";
+    tooltip.style.left = touchX + 10 + "px";
     if (this.getAttribute("alt") != "btns") document.body.appendChild(tooltip);
   });
   // Agregar evento para el toque (touchend)
@@ -42,7 +42,7 @@ for (let i = 0; i < tds.length; i++) {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
     tooltip.style.top = mouseY + "px";
-    tooltip.style.left = (mouseX+10) + "px";
+    tooltip.style.left = mouseX + 10 + "px";
     if (this.getAttribute("alt") != "btns") document.body.appendChild(tooltip);
   });
   // Evento para el mouse fuera de la celda (mouseout)
