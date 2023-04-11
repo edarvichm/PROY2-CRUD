@@ -81,12 +81,12 @@ function createRow(nuevoEvento) {
   const tablaActividades = document.getElementById("tablaActividades")
   tablaActividades.innerHTML += `
                                 <tr id=tr${index}>
-                                    <td id=nombreActividad${index}>${nuevoEvento.nombreActividad}</td>
-                                    <td id=lugar${index}>${nuevoEvento.lugar}</td>
-                                    <td id=fechaInicio${index}>${nuevoEvento.fechaInicio}</td>
-                                    <td id=fechaTermino${index}>${nuevoEvento.fechaTermino}</td>
-                                    <td id=horaInicio${index}>${nuevoEvento.horaInicio}</td>
-                                    <td id=horaTermino${index}>${nuevoEvento.horaTermino}</td>
+                                    <td alt='Nombre Actividad' id=nombreActividad${index}>${nuevoEvento.nombreActividad}</td>
+                                      <td alt='Lugar' id=lugar${index}>${nuevoEvento.lugar}</td>
+                                    <td alt='Fecha de Inicio' id=fechaInicio${index}>${nuevoEvento.fechaInicio}</td>
+                                    <td alt='Fecha de Término' id=fechaTermino${index}>${nuevoEvento.fechaTermino}</td>
+                                    <td alt='Hora de Inicio' id=horaInicio${index}>${nuevoEvento.horaInicio}</td>
+                                    <td alt='Hora de Término' id=horaTermino${index}>${nuevoEvento.horaTermino}</td>
                                     <td>
                                         <button class="btn btn-primary" id=e${index} onclick="editPopup(${index})">Editar</button>
                                         <button class="btn btn-primary" id=d${index} onclick="deleteEvent(${index})">Eliminar</button>
