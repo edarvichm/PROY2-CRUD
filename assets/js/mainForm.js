@@ -87,7 +87,7 @@ function createRow(nuevoEvento) {
                                     <td alt='Fecha de Término' id=fechaTermino${index}>${nuevoEvento.fechaTermino}</td>
                                     <td alt='Hora de Inicio' id=horaInicio${index}>${nuevoEvento.horaInicio}</td>
                                     <td alt='Hora de Término' id=horaTermino${index}>${nuevoEvento.horaTermino}</td>
-                                    <td>
+                                    <td alt='btns'>
                                         <button class="btn btn-primary" id=e${index} onclick="editPopup(${index})">Editar</button>
                                         <button class="btn btn-primary" id=d${index} onclick="deleteEvent(${index})">Eliminar</button>
                                     </td>
