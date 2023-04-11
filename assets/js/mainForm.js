@@ -1,19 +1,18 @@
+const sendForm = document.getElementById("sendForm");
+sendForm.addEventListener("click", create);
+sendForm.addEventListener("click", createPopup);
+const form = document.getElementById("formulario");
+form.addEventListener("input", handleInput);
+let flagEdit = false;
 
-const sendForm = document.getElementById("sendForm")
-sendForm.addEventListener("click", create)
-sendForm.addEventListener("click", createPopup)
-const form = document.getElementById("formulario")
-form.addEventListener("input", handleInput)
-let flagEdit = false
+const btnCrearActividad = document.getElementById("btnCrearActividad");
+btnCrearActividad.addEventListener("click", limpiarFormulario);
+const actividades = [];
 
-const btnCrearActividad = document.getElementById("btnCrearActividad")
-btnCrearActividad.addEventListener("click", limpiarFormulario)
-const actividades = []
-
-let index = 1
+let index = 1;
 
 function handleInput(e) {
-  const button = document.getElementById("sendForm")
+  const button = document.getElementById("sendForm");
   // const update = document.getElementById('sendFormUpdate')
   // flagEdit ? button.setAttribute("disabled", true) : button.removeAttribute("disabled")
 
@@ -26,28 +25,28 @@ function handleInput(e) {
     horaTermino.value &&
     !flagEdit
   ) {
-    button.removeAttribute("disabled")
-  // update.removeAttribute("disabled")
+    button.removeAttribute("disabled");
+    // update.removeAttribute("disabled")
   } else {
-    button.setAttribute("disabled", true)
+    button.setAttribute("disabled", true);
     // update.setAttribute("disabled", true)
   }
   //console.log(nombreActividad.value+lugar.value+fechaInicio.value+fechaTermino.value+horaInicio.value+horaTermino.value)
 }
 
 function create(e) {
-  e.preventDefault()
-  flagEdit = false
-  const nuevoEvento = readForm()//crearObjeto()
-  createRow(nuevoEvento)//ingresarDatosTabla()
-  limpiarFormulario() //limpia el formulario
-  saveDataLS()//guarda datos en Local Storage
+  e.preventDefault();
+  flagEdit = false;
+  const nuevoEvento = readForm(); //crearObjeto()
+  createRow(nuevoEvento); //ingresarDatosTabla()
+  limpiarFormulario(); //limpia el formulario
+  saveDataLS(); //guarda datos en Local Storage
 }
 
 function limpiarFormulario() {
-  const formClean = document.getElementById("formulario")
+  const formClean = document.getElementById("formulario");
   // console.log(formClean)
-  if(formClean) {
+  if (formClean) {
     formClean.reset();
   }
 }
@@ -62,8 +61,10 @@ function readForm() {
     "fechaTermino",
     "horaInicio",
     "horaTermino",
-  ]
-  dataForm.forEach((id) => { const element = document.getElementById(id) })
+  ];
+  dataForm.forEach((id) => {
+    const element = document.getElementById(id);
+  });
   //Creo un Objeto con los valores de Formulario como retorno de la función
   const nuevoEvento = {
     index: index,
@@ -73,12 +74,12 @@ function readForm() {
     fechaTermino: fechaTermino.value,
     horaInicio: horaInicio.value,
     horaTermino: horaTermino.value,
-  }
-  return nuevoEvento
+  };
+  return nuevoEvento;
 }
 
 function createRow(nuevoEvento) {
-  const tablaActividades = document.getElementById("tablaActividades")
+  const tablaActividades = document.getElementById("tablaActividades");
   tablaActividades.innerHTML += `
                                 <tr id=tr${index}>
                                     <td alt='Nombre Actividad' id=nombreActividad${index}>${nuevoEvento.nombreActividad}</td>
@@ -91,30 +92,30 @@ function createRow(nuevoEvento) {
                                         <button class="btn btn-primary" id=e${index} onclick="editPopup(${index})">Editar</button>
                                         <button class="btn btn-primary" id=d${index} onclick="deleteEvent(${index})">Eliminar</button>
                                     </td>
-                                </tr>`
+                                </tr>`;
   //Agrego el objeto al array de actividades
-  index++
-  actividades.push(nuevoEvento)
+  index++;
+  actividades.push(nuevoEvento);
 }
 
 function saveDataLS() {
-  localStorage.setItem('actividades', JSON.stringify(actividades))
+  localStorage.setItem("actividades", JSON.stringify(actividades));
 }
 
 function readFromLS() {
-  if (localStorage.getItem('actividades')) {
-    const actividadesLS = JSON.parse(localStorage.getItem('actividades'))
-    const actividadesLSArray = Object.values(actividadesLS) //convierte el objeto en array
+  if (localStorage.getItem("actividades")) {
+    const actividadesLS = JSON.parse(localStorage.getItem("actividades"));
+    const actividadesLSArray = Object.values(actividadesLS); //convierte el objeto en array
 
     //si hay actividades en el local storage
     if (actividadesLSArray) {
       //recorre el local storage
-      actividadesLSArray.forEach(actividad => {
+      actividadesLSArray.forEach((actividad) => {
         //crea una fila por cada actividad
-        createRow(actividad)
-      })
+        createRow(actividad);
+      });
     }
   }
 }
 
-readFromLS()
+readFromLS();

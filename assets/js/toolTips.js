@@ -17,7 +17,7 @@ for (let i = 0; i < tds.length; i++) {
     tooltip.style.top = touchY + "px";
     tooltip.style.left = touchX + 10 + "px";
     if (this.getAttribute("alt") != "btns") document.body.appendChild(tooltip);
-  });
+  }, { passive: true });
   // Agregar evento para el toque (touchend)
   td.addEventListener("touchend", function () {
     const tooltip = document.querySelector(".tooltip");
