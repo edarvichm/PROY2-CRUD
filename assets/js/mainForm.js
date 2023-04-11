@@ -14,7 +14,7 @@ let index = 1
 
 function handleInput(e) {
   const button = document.getElementById("sendForm")
-  const update = document.getElementById('sendFormUpdate')
+  // const update = document.getElementById('sendFormUpdate')
   // flagEdit ? button.setAttribute("disabled", true) : button.removeAttribute("disabled")
 
   if (
@@ -46,7 +46,7 @@ function create(e) {
 
 function limpiarFormulario() {
   const formClean = document.getElementById("formulario")
-  console.log(formClean)
+  // console.log(formClean)
   if(formClean) {
     formClean.reset();
   }
