@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/styleMain.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/styleMain.css">
     <script src="./assets/js/mainCRUD.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Proyecto CRUD</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#">CRUD</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" onclick="createPopup()">Nuevo/Lista</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
 
-    <body>
+    
 
-        <header>
-            <nav></nav>
-        </header>
-
-        <div class="titles">
-            <h1>Proyecto CRUD</h1>
-
+    <main class="main-content">
+      <section class="listActivites show" id="listActivites">
+        <div class="activities-container">
+          <h2>Lista de Actividades</h2>
+          <button class="btn btn-secondary btn-sm" id="btnCrearActividad" onclick="createPopup()">Nueva</button>
         </div>
-
-        <main class="main-content">
-            <section class="listActivites show" id="listActivites">
-                <div class="activities-container">
-                    <h2>Lista de Actividades</h2>
-                    <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">+</button>
-                </div>
-                <table class="main-table-results" id="tablaActividades">
-                    <tr class="table-header">
-                        <th>Actividad</th>
-                        <th>Lugar</th>
-                        <th>Fecha de inicio</th>
-                        <th>Fecha de término</th>
-                        <th>Hora de inicio</th>
-                        <th>Hora de término</th>
-                        <th>Acciones</th>
-                    </tr>
-                    <!-- <tr>
+        <table class="main-table-results" id="tablaActividades">
+          <tr class="table-header">
+            <th>Actividad</th>
+            <th>Lugar</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha de término</th>
+            <th>Hora de inicio</th>
+            <th>Hora de término</th>
+            <th>Acciones</th>
+          </tr>
+          <!-- <tr>
                         <td>Lorem ipsum dolor sit amet. </td>
                         <td>Lorem, ipsum dolor.</td>
                         <td>2021-10-10</td>
@@ -52,45 +66,65 @@
                         <td>10:00</td>
                         <td>11:00</td>
                         <td>
-                            <button class="btn btn-primary">Editar</button>
+                            <button class="btn btn-secondary btn-sm">Editar</button>
                             <button class="btn btn-danger">Eliminar</button>
                         </td>
                     </tr> -->
-                </table>
-            </section>
+        </table>
+      </section>
 
-            <section class="popup-Form" id="form">
-                <div class="activities-container">
-                    <h2>Crear Actividad</h2>
-                    <button class="btn btn-primary" id="btnCrearActividad" onclick="createPopup()">x</button>
-                </div>
-                <form id="formulario">
-                    <label for="nombreActividad">Nombre Actividad:</label>
-                    <input type="text" id="nombreActividad" name="nombreActividad"><br><br>
+      <section class="popup-Form" id="form">
+        <div class="activities-container">
+          <h2>Crear Actividad</h2>
+          <button class="btn btn-secondary btn-sm" id="btnCrearActividad" onclick="createPopup()">X</button>
+        </div>
+        <form id="formulario">
+          <label for="nombreActividad">Nombre Actividad:</label>
+          <input
+            type="text"
+            id="nombreActividad"
+            name="nombreActividad"
+          /><br /><br />
 
-                    <label for="lugar">Lugar:</label>
-                    <input type="text" id="lugar" name="lugar"><br><br>
+          <label for="lugar">Lugar:</label>
+          <input type="text" id="lugar" name="lugar" /><br /><br />
 
-                    <label for="fechaInicio">Fecha de inicio:</label>
-                    <input type="date" id="fechaInicio" name="fechaInicio"><br><br>
+          <label for="fechaInicio">Fecha de inicio:</label>
+          <input type="date" id="fechaInicio" name="fechaInicio" /><br /><br />
 
-                    <label for="fechaTermino">Fecha de término:</label>
-                    <input type="date" id="fechaTermino" name="fechaTermino"><br><br>
+          <label for="fechaTermino">Fecha de término:</label>
+          <input
+            type="date"
+            id="fechaTermino"
+            name="fechaTermino"
+          /><br /><br />
 
-                    <label for="horaInicio">Hora de inicio:</label>
-                    <input type="time" id="horaInicio" name="horaInicio"><br><br>
+          <label for="horaInicio">Hora de inicio:</label>
+          <input type="time" id="horaInicio" name="horaInicio" /><br /><br />
 
-                    <label for="horaTermino">Hora de término:</label>
-                    <input type="time" id="horaTermino" name="horaTermino"><br><br>
+          <label for="horaTermino">Hora de término:</label>
+          <input type="time" id="horaTermino" name="horaTermino" /><br /><br />
 
-                    <input type="submit" disabled value="Enviar" id="sendForm">
-                    
-                </form>
-            </section>
-        </main>
-        <script src="./assets/js/mainForm.js"></script>
-        <script src="./assets/js/mainUD.js"></script>
-        <script src="./assets/js/toolTips.js"></script>
-    </body>
+          <input type="submit" class="btn btn-secondary btn-sm" disabled value="Enviar" id="sendForm" />
+        </form>
+      </section>
+    </main>
+    <script src="./assets/js/mainForm.js"></script>
+    <script src="./assets/js/mainUD.js"></script>
+    <script src="./assets/js/toolTips.js"></script>
+  </body>
 
+  <footer>
+    <!-- <div class="container"> -->
+      <div class="social-icons">
+        <a href="#" class="social-icon facebook">FB</a>
+        <a href="#" class="social-icon twitter">TW</a>
+        <a href="#" class="social-icon instagram">IG</a>
+        <a href="#" class="social-icon linkedin">LI</a>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Todos los derechos reservados.</p>
+      <!-- </div> -->
+    </div>
+  </footer>
 </html>

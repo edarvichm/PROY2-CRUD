@@ -32,9 +32,11 @@ function editPopup(index) {
     const button = document.getElementById("sendForm");
     if (flagEdit) {
       button.setAttribute("disabled", true);
+      button.classList.add("btn", "btn-secondary", "btn-sm");
     }
     // btnUpdate.setAttribute("disabled", "false")
     btnUpdate.setAttribute("onclick", `updateEvent(${index})`);
+    btnUpdate.classList.add("btn", "btn-secondary", "btn-sm");
     btnUpdate.value = "Actualizar";
     btnUpdate.id = "sendFormUpdate";
     // Append btnUpdate to form

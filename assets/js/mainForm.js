@@ -89,8 +89,8 @@ function createRow(nuevoEvento) {
                                     <td alt='Hora de Inicio' id=horaInicio${index}>${nuevoEvento.horaInicio}</td>
                                     <td alt='Hora de Término' id=horaTermino${index}>${nuevoEvento.horaTermino}</td>
                                     <td alt='btns'>
-                                        <button class="btn btn-primary" id=e${index} onclick="editPopup(${index})">Editar</button>
-                                        <button class="btn btn-primary" id=d${index} onclick="deleteEvent(${index})">Eliminar</button>
+                                        <button class="btn btn-secondary btn-sm" id=e${index} onclick="editPopup(${index})">Editar</button>
+                                        <button class="btn btn-danger btn-sm" id=d${index} onclick="deleteEvent(${index})">Eliminar</button>
                                     </td>
                                 </tr>`;
   //Agrego el objeto al array de actividades
