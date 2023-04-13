@@ -30,7 +30,9 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 8rem 0;
+  padding-top: 64px;
+  padding-bottom: 64px;    
+  
 }
 
 .listActivites {
@@ -50,7 +52,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 2hv;
 }
 
 .show {
