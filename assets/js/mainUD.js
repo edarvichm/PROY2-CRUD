@@ -50,10 +50,12 @@ function updateEvent(index) {
   row.parentNode.removeChild(row);
   // console.log(row)
   // console.log(actividades)
-  actividades.splice(index - 1, index);
-  // console.log(actividades)
+  const editedEventIndex = actividades.findindex(event=> actividades.index === index)
+  console.log(editedEventIndex)
   const nuevoEvento = readForm(); //crearObjeto()
-  createRow(nuevoEvento); //ingresarDatosTabla()
+  actividades.splice(index-1, index,nuevoEvento);
+  // console.log(actividades)
+  //createRow(nuevoEvento); //ingresarDatosTabla()
   // console.log(actividades)
   localStorage.removeItem("actividades");
   saveDataLS();
