@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"name": "DWFSC6-M1C3-flex-grid",
+			"path": "../../../DWFSC6/DWFSC6-M1C3-flex-grid"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Desarrollo"
+	}
+}
