@@ -47,13 +47,18 @@ function editPopup(index) {
 function updateEvent(index) {
   let idTr = `tr${index}`;
   const row = document.getElementById(idTr);
-  row.parentNode.removeChild(row);
+  // row.parentNode.removeChild(row);
   // console.log(row)
   // console.log(actividades)
-  actividades.splice(index - 1, index);
-  // console.log(actividades)
+  const editedEventIndex = actividades.findIndex((event)=> actividades.index === index)
+  console.log(editedEventIndex)
   const nuevoEvento = readForm(); //crearObjeto()
-  createRow(nuevoEvento); //ingresarDatosTabla()
+  console.log(nuevoEvento)
+  console.log(actividades)
+  actividades.splice(index-1, 1,nuevoEvento);
+  console.log(actividades)
+  // console.log(actividades)
+  //createRow(nuevoEvento); //ingresarDatosTabla()
   // console.log(actividades)
   localStorage.removeItem("actividades");
   saveDataLS();
